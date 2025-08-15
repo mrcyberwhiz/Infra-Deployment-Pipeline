@@ -4,8 +4,8 @@ variable "bucket_name" {
 }
 
 variable "tags" {
-  description = "Tages to set on the bucket"
-  type        = string
+  type = map(string)
+  description = "Tags for the S3 bucket"
 }
 
 variable "env" {
