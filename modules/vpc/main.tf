@@ -1,6 +1,7 @@
 resource "aws_vpc" "myvpc" {
   cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
+  count            = var.vpc_count
 
   tags = {
     Name = "${var.env}-vpc"

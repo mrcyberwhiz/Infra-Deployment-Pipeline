@@ -15,13 +15,3 @@ module "ec2" {
   ec2_count     = 1
   env           = "production"
 }
-
-module "s3" {
-  source      = "../../modules/s3"
-  bucket_name = "my-production-bucket-Infra-pipeline-deployment"
-  env         = "production"
-  tags = {
-    Environment = "production"
-    Project     = "Infra-pipeline-deployment"
-  }
-}
