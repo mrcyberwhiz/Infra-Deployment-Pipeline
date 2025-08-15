@@ -20,6 +20,6 @@ variable "subnet_az" {
 
 variable "vpc_count" {
   type          = number  
-  default = 1
+  default       = 1
   description   = "No of my VPC to be created"
 }
