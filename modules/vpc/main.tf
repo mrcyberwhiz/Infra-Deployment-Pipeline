@@ -1,12 +1,12 @@
 resource "aws_vpc" "myvpc" {
   cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
-  count            = var.vpc_count
 
   tags = {
     Name = "${var.env}-vpc"
   }
 }
+
 resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr
@@ -18,6 +18,6 @@ resource "aws_subnet" "main" {
 }
 
 output "subnet_id" {
-  value         = aws_subnet.main.id
-  description   = "The Subnet Which my EC2 will be created"
+  value       = aws_subnet.main.id
+  description = "The Subnet which my EC2 will be created"
 }
