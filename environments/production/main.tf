@@ -16,7 +16,7 @@ module "ec2" {
   env           = "production"
 }
 
-module "s3" {
+/* module "s3" {
   source      = "../../modules/s3"
   bucket_name = "my-production-bucket-infra-pipeline-deployment"
   env         = "production"
@@ -24,4 +24,4 @@ module "s3" {
     Environment = "production"
     Project     = "Infra-pipeline-deployment"
   }
-}
+} */
