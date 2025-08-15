@@ -8,12 +8,16 @@ resource "aws_vpc" "myvpc" {
   }
 }
 resource "aws_subnet" "main" {
-  count             = var.vpc_count  
-  vpc_id            = aws_vpc.myvpc[count.index].id
+  vpc_id            = aws_vpc.myvpc.id
   cidr_block        = var.subnet_cidr
   availability_zone = var.subnet_az
 
   tags = {
     Name = "${var.env}-subnet"
   }
+}
+
+output "subnet_id" {
+  value         = aws_subnet.main.id
+  description   = "The Subnet Which my EC2 will be created"
 }
